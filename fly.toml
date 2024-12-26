@@ -1,16 +1,29 @@
-app = ''  # change this before deploying! unless using `flyctl launch`
-primary_region = "ord"
+# fly.toml app configuration file generated for grow-agent-fooocus on 2024-12-25T23:51:01-08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'grow-agent-fooocus'
+primary_region = 'ord'
+organization = 'grow-agent'
+
+[build]
+
+[[mounts]]
+  source = 'models'
+  destination = '/app/Fooocus'
+  initial_size = '30gb'
 
 [http_service]
   internal_port = 7865
   force_https = true
-
-[mounts]
-  source = "models"
-  destination = "/app/Fooocus/models"
-  initial_size = "20gb"
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
 
 [[vm]]
-  size = "performance-8x"
-  memory = "32gb"
+  size = 'performance-8x'
+  memory = '32gb'
+  cpu_kind = 'performance'
+  cpus = 8
   gpu_kind = "a100-pcie-40gb"
