@@ -1,5 +1,5 @@
 <div align="center">
-  <h1><code>fooocus-demo</code></h1>
+  <h1><code>fooocus</code></h1>
 </div>
 
 > [!IMPORTANT]  
@@ -14,7 +14,7 @@
 > Running this requires the latest version of [flyctl](https://github.com/superfly/flyctl)
 > 
 ```
-fly launch --from https://github.com/fly-apps/fooocus-demo
+fly launch --from https://github.com/iaminawe/fooocus-demo
 ```
 
 ## Having trouble?
